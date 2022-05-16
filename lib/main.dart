@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-//      routes: {
-//        "ware_edit": (context)=> const WareEdit(),
-//      },
-      home: const WareEdit(),
+      initialRoute: "ware_edit",
+      routes: {
+        "ware_edit": (context)=> const WareEdit(),
+      },
+//      home: const WareEdit(),
     );
   }
 }
