@@ -26,7 +26,7 @@ class WareEdit2 extends StatelessWidget {
                   Text("商品名称:"),
                   Expanded(child: TextField(decoration:InputDecoration(
                     hintText: "请输入商品名称",
-                    hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 12),
+                    hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 13),
                     border: OutlineInputBorder(borderSide: BorderSide.none)
                   ))),
                 ],
