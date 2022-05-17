@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "ware_edit",
       routes: {
-        "ware_edit": (context)=> const WareEdit2(),
+        "ware_edit": (context)=> const WareEdit(),
       },
 //      home: const WareEdit(),
     );

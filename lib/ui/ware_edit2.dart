@@ -25,9 +25,9 @@ class WareEdit2 extends StatelessWidget {
                 children: const [
                   Text("商品名称:"),
                   Expanded(child: TextField(decoration:InputDecoration(
-                    hintText: "请输入商品名称",
-                    hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 13),
-                    border: OutlineInputBorder(borderSide: BorderSide.none)
+                      hintText: "请输入商品名称",
+                      hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 13),
+                      border: OutlineInputBorder(borderSide: BorderSide.none)
                   ))),
                 ],
               ),
@@ -56,7 +56,7 @@ class WareEdit2 extends StatelessWidget {
                           hintText: "如瓶",
                           hintStyle: TextStyle(color: Color(0xFf999999), fontSize: 12),
                           border: OutlineInputBorder(
-                            borderSide: BorderSide.none
+                              borderSide: BorderSide.none
                           ),
                         ),
                       ))
@@ -88,11 +88,11 @@ class WareEdit2 extends StatelessWidget {
                       Text("规格(小):", style: TextStyle(color: Color(0xff666666), fontSize: 13),),
                       Expanded(child: TextField(
                         decoration: InputDecoration(
-                          hintText: "如500ml",
-                          hintStyle: TextStyle(color: Color(0xff999999), fontSize: 13),
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide.none
-                          )
+                            hintText: "如500ml",
+                            hintStyle: TextStyle(color: Color(0xff999999), fontSize: 13),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none
+                            )
                         ),
                       ))
                     ],
