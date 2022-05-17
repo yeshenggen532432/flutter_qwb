@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterqwb/ui/ware_edit.dart';
+import 'package:flutterqwb/ui/ware_edit2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "ware_edit",
       routes: {
-        "ware_edit": (context)=> const WareEdit(),
+        "ware_edit": (context)=> const WareEdit2(),
       },
 //      home: const WareEdit(),
     );
