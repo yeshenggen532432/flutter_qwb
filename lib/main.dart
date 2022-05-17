@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutterqwb/ui/ware_edit.dart';
-import 'package:flutterqwb/ui/ware_edit2.dart';
 
 void main() {
   runApp(const MyApp());

@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ColorUtil{
-  static Color LINE_GRAY = const Color(0xFFEEEEEE);
+  static Color LINE_GRAY = Color(0xFFEEEEEE);
   static Color RED = Colors.red;
   static Color BLUE = Colors.blue;
   static Color White = Colors.white;

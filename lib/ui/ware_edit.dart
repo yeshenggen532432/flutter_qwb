@@ -29,7 +29,7 @@ class WareEdit extends StatelessWidget {
       body: Container(
         margin: EdgeInsets.only(left: 10, right: 10),
         color: Colors.white,
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(
               height: 40,
@@ -136,7 +136,7 @@ class WareEdit extends StatelessWidget {
                 ],
               ),
             ),
-            const Divider(height: 1, color: Color(0xffeeeeee) ),
+            const Divider(height: 1, color: Color(0xffeeeeee)),
             SizedBox(
               child: Row(
                 children: [
@@ -171,7 +171,125 @@ class WareEdit extends StatelessWidget {
                 ],
               ),
             ),
-            const Divider(height: 1, color: Color(0xffeeeeee),)
+            const Divider(height: 1, color: Color(0xffeeeeee)),
+            SizedBox(
+              child: Row(
+                children: [
+                  Expanded(child: Row(
+                    children: [
+                      Text("条码(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE),),
+                      Expanded(child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "如(箱码)",
+                          hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide.none
+                          )
+                        ),
+                      )),
+                      IconButton(onPressed: (){}, icon: const Icon(Icons.scanner))
+                    ],
+                  )),
+                  Expanded(child: Row(
+                    children: [
+                      Text("条码(小):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
+                      Expanded(child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "如(瓶码)",
+                          hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide.none
+                          )
+                        ),
+                      )),
+                      IconButton(onPressed: (){}, icon: const Icon(Icons.scanner))
+                    ],
+                  ))
+                ],
+              ),
+            ),
+            Divider(height: 1, color: ColorUtil.LINE_GRAY),
+            SizedBox(
+              child: Row(
+                children: [
+                  Text("大小单位换算比例:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
+                  Text("1", style: TextStyle(color: ColorUtil.GRAY_3, fontSize: FontSizeUtil.BIG)),
+                  Text("*大单位=", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
+                  Expanded(child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "点击输入",
+                      hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none
+                      )
+                    ),
+                  )),
+                  Text("*小单位", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
+                ],
+              ),
+            ),
+            Container(
+              height: 40,
+              alignment: Alignment.center,
+              child: TextButton( onPressed: (){}, child: Text("商品辅助信息1", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG))),
+            ),
+            SizedBox(
+              child: Row(
+                children: [
+                  Expanded(child: Row(
+                    children: [
+                      Text("总排序(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
+                      SizedBox(width:40,child: TextButton(onPressed: (){}, child: Text("选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
+                      Expanded(child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "点击输入",
+                          hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide.none
+                          )
+                        ),
+                      ))
+                    ],
+                  )),
+                  Expanded(child: Row(
+                    children: [
+                      Text("总排序(小):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
+                      SizedBox(width:40,child: TextButton(onPressed: (){}, child: Text("选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
+                      Expanded(child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "点击输入",
+                            hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
+                            border: const OutlineInputBorder(
+                                borderSide: BorderSide.none
+                            )
+                        ),
+                      ))
+                    ],
+                  )),
+                ],
+              ),
+            ),
+            SizedBox(
+              child: Row(
+                children: [
+                  Expanded(child: Row(
+                    children: [
+                      Text("分类排序:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
+                      Expanded(child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "点击输入",
+                            hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
+                            border: const OutlineInputBorder(
+                                borderSide: BorderSide.none
+                            )
+                        ),
+                      ))
+                    ],
+                  ))
+                ],
+              ),
+            ),
+            Divider(height: 1, color: ColorUtil.LINE_GRAY),
           ],
         ),
       ),
