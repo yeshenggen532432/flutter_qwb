@@ -60,7 +60,6 @@ class WareEdit extends StatelessWidget {
                   Text("实物商品"),
                   Radio(value: 1, groupValue: [0, 1], onChanged: (value){}),
                   Text("服务商品"),
-                  Text("注：服务商品，不走发货流程", style: TextStyle(color: ColorUtil.RED, fontSize: FontSizeUtil.TIP_RED),),
                 ],
               ),
             ),
