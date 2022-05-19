@@ -1,0 +1,1760 @@
+{
+  "code": 200,
+  "message": "操作成功",
+  "data": [
+    {
+      "groupType": 0,
+      "waretypeId": -1,
+      "waretypeNm": "实物商品",
+      "typeList": [
+        {
+          "groupType": 0,
+          "waretypeId": 559,
+          "waretypeNm": "南北干货",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 37,
+          "waretypeNm": "饮料",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 556,
+          "waretypeNm": "自酿啤酒",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 549,
+          "waretypeNm": "茶叶",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 211,
+              "waretypeNm": "hrhy",
+              "waretypePid": 549
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 550,
+              "waretypeNm": "红日",
+              "waretypePid": 549
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 32,
+          "waretypeNm": "矿泉水",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 546,
+          "waretypeNm": "副食品32",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 473,
+              "waretypeNm": "零食快消",
+              "waretypePid": 546
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 561,
+              "waretypeNm": "yjtjtj",
+              "waretypePid": 546
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 543,
+          "waretypeNm": "玩具",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 468,
+          "waretypeNm": "美妆",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 472,
+              "waretypeNm": "套装",
+              "waretypePid": 468
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 471,
+              "waretypeNm": "面霜",
+              "waretypePid": 468
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 469,
+              "waretypeNm": "洗面奶",
+              "waretypePid": 468
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 570,
+          "waretypeNm": "促销品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 568,
+          "waretypeNm": "日常生活用品666",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 569,
+              "waretypeNm": "沐浴露666",
+              "waretypePid": 568
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 562,
+          "waretypeNm": "hjnyjyu",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 557,
+          "waretypeNm": "办公室商品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 558,
+          "waretypeNm": "家用电器",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 466,
+          "waretypeNm": "文具",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 547,
+              "waretypeNm": "味品",
+              "waretypePid": 466
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 467,
+              "waretypeNm": "笔",
+              "waretypePid": 466
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 463,
+          "waretypeNm": "日常生活用品333",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 464,
+              "waretypeNm": "洁柔纸巾",
+              "waretypePid": 463
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 465,
+              "waretypeNm": "维达纸巾",
+              "waretypePid": 463
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 453,
+          "waretypeNm": "日常生活用品111",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 454,
+              "waretypeNm": "沐浴露",
+              "waretypePid": 453
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 446,
+          "waretypeNm": "日化用品11",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 424,
+          "waretypeNm": "日化",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 425,
+              "waretypeNm": "牙刷类",
+              "waretypePid": 424
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 438,
+              "waretypeNm": "洗护类",
+              "waretypePid": 424
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 545,
+          "waretypeNm": "乳饮料",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 433,
+          "waretypeNm": "冲床",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 434,
+              "waretypeNm": "普通冲床",
+              "waretypePid": 433
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 177,
+          "waretypeNm": "扫码商品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 426,
+          "waretypeNm": "调味品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 460,
+          "waretypeNm": "喜事用品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 461,
+              "waretypeNm": "喜糖",
+              "waretypePid": 460
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 458,
+          "waretypeNm": "母婴用品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 459,
+              "waretypeNm": "爱他美奶粉1段",
+              "waretypePid": 458
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 411,
+          "waretypeNm": "花卉",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 412,
+              "waretypeNm": "蝴蝶兰",
+              "waretypePid": 411
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 414,
+          "waretypeNm": "广告",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 415,
+              "waretypeNm": "广告费",
+              "waretypePid": 414
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 451,
+          "waretypeNm": "酒",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 452,
+              "waretypeNm": "啤酒2222",
+              "waretypePid": 451
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 448,
+          "waretypeNm": "门店测试",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 409,
+          "waretypeNm": "日常生活必须品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 410,
+              "waretypeNm": "毛巾",
+              "waretypePid": 409
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 443,
+          "waretypeNm": "办公用品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 427,
+              "waretypeNm": "农产品",
+              "waretypePid": 443
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 444,
+              "waretypeNm": "钢笔",
+              "waretypePid": 443
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 442,
+          "waretypeNm": "生活",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 441,
+          "waretypeNm": "背心2222",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 440,
+          "waretypeNm": "库存商品类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 407,
+          "waretypeNm": "日常生活用品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 408,
+              "waretypeNm": "洗发水",
+              "waretypePid": 407
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 439,
+          "waretypeNm": "生活用纸",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 384,
+          "waretypeNm": "哈哈",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 399,
+          "waretypeNm": "卡士",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 395,
+          "waretypeNm": "咖啡类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 392,
+          "waretypeNm": "哥哥哥哥哥",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 393,
+          "waretypeNm": "坎坎坷坷看",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 394,
+          "waretypeNm": "泡面类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 33,
+          "waretypeNm": "能量饮料",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 419,
+          "waretypeNm": "日化用品111",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 417,
+          "waretypeNm": "植物油",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 418,
+              "waretypeNm": "金龙鱼",
+              "waretypePid": 417
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 386,
+          "waretypeNm": "牙刷",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 387,
+              "waretypeNm": "舒客saky牙刷",
+              "waretypePid": 386
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 388,
+              "waretypeNm": "黑人darlie牙刷",
+              "waretypePid": 386
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 166,
+          "waretypeNm": "啤酒1",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 208,
+          "waretypeNm": "糕点",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 209,
+          "waretypeNm": "饼干",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 210,
+          "waretypeNm": "肉制品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 212,
+          "waretypeNm": "冲调",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 213,
+          "waretypeNm": "乐器类乐器类乐器类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 192,
+          "waretypeNm": "电器",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 206,
+          "waretypeNm": "饮料类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 404,
+          "waretypeNm": "面包类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 163,
+          "waretypeNm": "换算",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 34,
+          "waretypeNm": "凉茶",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 401,
+          "waretypeNm": "进口啤酒",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 400,
+          "waretypeNm": "食用油",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 102,
+          "waretypeNm": "矿泉水22",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 397,
+          "waretypeNm": "绿色洁",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 86,
+          "waretypeNm": "常温酸奶",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 359,
+              "waretypeNm": "商品类222222222",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 88,
+              "waretypeNm": "莫斯利安1",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 90,
+              "waretypeNm": "纯真酸奶",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 89,
+              "waretypeNm": "安慕希",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 101,
+              "waretypeNm": "优酸乳",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 175,
+              "waretypeNm": "蒙牛",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 375,
+              "waretypeNm": "33333",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 361,
+              "waretypeNm": "商品类777777777",
+              "waretypePid": 86
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 365,
+              "waretypeNm": "小商品211111111",
+              "waretypePid": 86
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 164,
+          "waretypeNm": "酒饮料",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 169,
+          "waretypeNm": "海天产品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 173,
+              "waretypeNm": "蚝油",
+              "waretypePid": 169
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 170,
+              "waretypeNm": "酱油类",
+              "waretypePid": 169
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 5,
+          "waretypeNm": "芭乐原浆",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 134,
+          "waretypeNm": "鸭寨姑娘",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 391,
+          "waretypeNm": "哈哈哈哈哈哈",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 92,
+          "waretypeNm": "鸭寨姑娘3",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 366,
+          "waretypeNm": "小商品222222222",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 368,
+              "waretypeNm": "商品分类12345678",
+              "waretypePid": 366
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 429,
+              "waretypeNm": "电脑网卡",
+              "waretypePid": 366
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 367,
+              "waretypeNm": "小商品233333333",
+              "waretypePid": 366
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 148,
+          "waretypeNm": "纸巾121",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 214,
+          "waretypeNm": "牛奶类",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 215,
+              "waretypeNm": "伊利纯牛奶",
+              "waretypePid": 214
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 217,
+              "waretypeNm": "蒙牛纯牛奶",
+              "waretypePid": 214
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 220,
+              "waretypeNm": "全明牛奶",
+              "waretypePid": 214
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 225,
+              "waretypeNm": "1122334455",
+              "waretypePid": 214
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 176,
+          "waretypeNm": "联盟凉茶",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 143,
+          "waretypeNm": "零食-饼干",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 196,
+          "waretypeNm": "恒顺集团",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 198,
+              "waretypeNm": "恒顺醋业",
+              "waretypePid": 196
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 15,
+          "waretypeNm": "办公桌",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 99,
+          "waretypeNm": "纸巾12",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 16,
+          "waretypeNm": "汽车",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 218,
+          "waretypeNm": "帅神",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 202,
+          "waretypeNm": "水果",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 203,
+              "waretypeNm": "杜鹃花科越橘属植物",
+              "waretypePid": 202
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 98,
+          "waretypeNm": "日化用品1",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 35,
+          "waretypeNm": "日化用品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 9,
+          "waretypeNm": "待分",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 7,
+              "waretypeNm": "肉制品",
+              "waretypePid": 9
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 79,
+              "waretypeNm": "蛋2",
+              "waretypePid": 9
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 13,
+              "waretypeNm": "闲嗞味",
+              "waretypePid": 9
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 18,
+              "waretypeNm": "闲滋味",
+              "waretypePid": 9
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 42,
+              "waretypeNm": "防晒伞",
+              "waretypePid": 9
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 80,
+              "waretypeNm": "名",
+              "waretypePid": 9
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 81,
+              "waretypeNm": "名1",
+              "waretypePid": 9
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 11,
+              "waretypeNm": "蛋888",
+              "waretypePid": 9
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 1,
+          "waretypeNm": "啤酒",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 2,
+              "waretypeNm": "青岛啤酒",
+              "waretypePid": 1
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 6,
+              "waretypeNm": "雪津啤酒",
+              "waretypePid": 1
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 76,
+          "waretypeNm": "调理品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 77,
+              "waretypeNm": "鸡类",
+              "waretypePid": 76
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 22,
+          "waretypeNm": "葡萄酒",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 3,
+          "waretypeNm": "白酒",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 84,
+          "waretypeNm": "乐器类乐器类乐器1234",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 85,
+          "waretypeNm": "营销工具类乐器类乐器类乐",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 83,
+          "waretypeNm": "洗衣液",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 8,
+          "waretypeNm": "零食",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 26,
+          "waretypeNm": "菜谱",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 27,
+              "waretypeNm": "炒面面",
+              "waretypePid": 26
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 28,
+              "waretypeNm": "炒饭",
+              "waretypePid": 26
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 24,
+          "waretypeNm": "茶",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 30,
+          "waretypeNm": "电器",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 31,
+          "waretypeNm": "牛奶",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 38,
+          "waretypeNm": "建材类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 39,
+          "waretypeNm": "碳酸饮料",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 40,
+          "waretypeNm": "测试二级",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 43,
+          "waretypeNm": "生态蓝莓系列",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 44,
+          "waretypeNm": "纸巾",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 45,
+          "waretypeNm": "烟花",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 49,
+              "waretypeNm": "炮仗",
+              "waretypePid": 45
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 78,
+          "waretypeNm": "青啤兑奖物料",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 47,
+          "waretypeNm": "测试分类",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 48,
+              "waretypeNm": "炮仗2222",
+              "waretypePid": 47
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 53,
+              "waretypeNm": "炮仗",
+              "waretypePid": 47
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 54,
+              "waretypeNm": "炮仗1",
+              "waretypePid": 47
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 155,
+          "waretypeNm": "未分类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 50,
+          "waretypeNm": "波德",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 72,
+              "waretypeNm": "伯伯奶茶",
+              "waretypePid": 50
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 51,
+          "waretypeNm": "超连",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 52,
+          "waretypeNm": "传汇",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 55,
+          "waretypeNm": "冻品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 56,
+          "waretypeNm": "饮料食品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 57,
+          "waretypeNm": "干货类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 58,
+          "waretypeNm": "图书",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 59,
+          "waretypeNm": "青菜",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 64,
+          "waretypeNm": "潮流食品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 65,
+              "waretypeNm": "气泡水",
+              "waretypePid": 64
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 66,
+          "waretypeNm": "酒水",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 67,
+              "waretypeNm": "美酒",
+              "waretypePid": 66
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 68,
+              "waretypeNm": "美水",
+              "waretypePid": 66
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 69,
+          "waretypeNm": "干白",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 70,
+          "waretypeNm": "萝卜",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 71,
+              "waretypeNm": "胡萝卜",
+              "waretypePid": 70
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 96,
+          "waretypeNm": "人一",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 97,
+              "waretypeNm": "六",
+              "waretypePid": 96
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 82,
+          "waretypeNm": "面包",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 100,
+          "waretypeNm": "日化用品2",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 93,
+          "waretypeNm": "茗茶",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 94,
+              "waretypeNm": "为什么",
+              "waretypePid": 93
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 95,
+              "waretypeNm": "八一八",
+              "waretypePid": 93
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 104,
+          "waretypeNm": "换盖",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 105,
+          "waretypeNm": "保健品",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 106,
+              "waretypeNm": "swiss",
+              "waretypePid": 105
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 165,
+          "waretypeNm": "泡面",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 179,
+          "waretypeNm": "aaa",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 356,
+              "waretypeNm": "test111",
+              "waretypePid": 179
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 194,
+          "waretypeNm": "代加工冲压",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 204,
+          "waretypeNm": "洗洁精",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 219,
+          "waretypeNm": "未分类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 374,
+          "waretypeNm": "耗油",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 376,
+          "waretypeNm": "海参类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 377,
+          "waretypeNm": "鱼翅类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 378,
+          "waretypeNm": "燕窝、雪蛤类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 379,
+          "waretypeNm": "瑶柱、干贝类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 380,
+          "waretypeNm": "鱼肚类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 381,
+          "waretypeNm": "水发类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 382,
+          "waretypeNm": "鲍鱼类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 383,
+          "waretypeNm": "其他类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 389,
+          "waretypeNm": "酒类",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 390,
+              "waretypeNm": "鸡尾酒.。啤酒",
+              "waretypePid": 389
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 423,
+          "waretypeNm": "零售8",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 445,
+          "waretypeNm": "速冻食品",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 449,
+          "waretypeNm": "粮油",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 450,
+          "waretypeNm": "菌菇类",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 475,
+          "waretypeNm": "酱油",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 476,
+              "waretypeNm": "海堤",
+              "waretypePid": 475
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 477,
+              "waretypeNm": "李锦记",
+              "waretypePid": 475
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 502,
+              "waretypeNm": "厨邦",
+              "waretypePid": 475
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 512,
+              "waretypeNm": "海天",
+              "waretypePid": 475
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 478,
+          "waretypeNm": "味精鸡精",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 479,
+              "waretypeNm": "海燕",
+              "waretypePid": 478
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 490,
+              "waretypeNm": "太太乐",
+              "waretypePid": 478
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 529,
+              "waretypeNm": "鲜之惠",
+              "waretypePid": 478
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 480,
+          "waretypeNm": "小菜类",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 481,
+              "waretypeNm": "贝奇",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 500,
+              "waretypeNm": "紫竹",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 506,
+              "waretypeNm": "龙城",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 507,
+              "waretypeNm": "乌江",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 516,
+              "waretypeNm": "永生",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 517,
+              "waretypeNm": "吉香居",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 519,
+              "waretypeNm": "紫金",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 520,
+              "waretypeNm": "榕晨",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 528,
+              "waretypeNm": "津味",
+              "waretypePid": 480
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 531,
+              "waretypeNm": "老干爹",
+              "waretypePid": 480
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 482,
+          "waretypeNm": "肉酱",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 483,
+              "waretypeNm": "古龙",
+              "waretypePid": 482
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 484,
+          "waretypeNm": "粉类",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 485,
+              "waretypeNm": "家泽",
+              "waretypePid": 484
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 497,
+              "waretypeNm": "徐师傅",
+              "waretypePid": 484
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 525,
+              "waretypeNm": "桂花嫂",
+              "waretypePid": 484
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 527,
+              "waretypeNm": "南德",
+              "waretypePid": 484
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 530,
+              "waretypeNm": "祥厨",
+              "waretypePid": 484
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 486,
+          "waretypeNm": "辣椒酱类",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 487,
+              "waretypeNm": "老干妈",
+              "waretypePid": 486
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 489,
+              "waretypeNm": "军杰",
+              "waretypePid": 486
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 498,
+              "waretypeNm": "鑫华丰",
+              "waretypePid": 486
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 514,
+              "waretypeNm": "鹃凤郫县",
+              "waretypePid": 486
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 515,
+              "waretypeNm": "其它辣椒",
+              "waretypePid": 486
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 518,
+              "waretypeNm": "中邦",
+              "waretypePid": 486
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 521,
+              "waretypeNm": "湘辣情",
+              "waretypePid": 486
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 488,
+          "waretypeNm": "面粉",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 491,
+          "waretypeNm": "火锅料",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 492,
+              "waretypeNm": "麻辣人家",
+              "waretypePid": 491
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 493,
+              "waretypeNm": "龙年旺",
+              "waretypePid": 491
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 499,
+              "waretypeNm": "巨龙姑姑坊",
+              "waretypePid": 491
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 501,
+              "waretypeNm": "海底捞",
+              "waretypePid": 491
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 503,
+              "waretypeNm": "红灯笼",
+              "waretypePid": 491
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 509,
+              "waretypeNm": "川掌门",
+              "waretypePid": 491
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 526,
+              "waretypeNm": "青麻子",
+              "waretypePid": 491
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 494,
+          "waretypeNm": "辣椒油麻油",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 495,
+              "waretypeNm": "齐有香",
+              "waretypePid": 494
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 510,
+              "waretypeNm": "好有铭",
+              "waretypePid": 494
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 511,
+              "waretypeNm": "新季红",
+              "waretypePid": 494
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 496,
+          "waretypeNm": "亚环",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 504,
+          "waretypeNm": "豆腐乳",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 505,
+              "waretypeNm": "桂香婆",
+              "waretypePid": 504
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 508,
+          "waretypeNm": "面条",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 513,
+          "waretypeNm": "其它",
+          "waretypePid": 0
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 522,
+          "waretypeNm": "醋+加饭酒",
+          "waretypePid": 0,
+          "typeList": [
+            {
+              "groupType": 0,
+              "waretypeId": 523,
+              "waretypeNm": "紫洋",
+              "waretypePid": 522
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 524,
+              "waretypeNm": "料酒",
+              "waretypePid": 522
+            },
+            {
+              "groupType": 0,
+              "waretypeId": 532,
+              "waretypeNm": "华香",
+              "waretypePid": 522
+            }
+          ]
+        },
+        {
+          "groupType": 0,
+          "waretypeId": 548,
+          "waretypeNm": "益和源系列",
+          "waretypePid": 0
+        }
+      ]
+    }
+  ],
+  "msg": "操作成功",
+  "state": true,
+  "success": true
+}

@@ -21,4 +21,18 @@ class MyApp extends StatelessWidget {
 //      home: const WareEdit(),
     );
   }
+
+//  List<Map<String, dynamic>> _checkList = [];
+//  _showDialogWareType(BuildContext context) {
+//    showDialog(
+//        context: context,
+//        barrierDismissible: false,
+//        builder: (BuildContext context) {
+//          return TreeWareTypeDialog(isType:"0", businessType:"0",checkData: _checkList, okCallBack: (value){
+//            _checkList = value;
+//          });
+//        }
+//    );
+//  }
+
 }
