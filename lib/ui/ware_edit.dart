@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterqwb/tree/dialog/tree_ware_type_dialog.dart';
 import 'package:flutterqwb/utils/color_util.dart';
 import 'package:flutterqwb/utils/font_size_util.dart';
+import 'package:flutterqwb/utils/string_util.dart';
 
 class WareEdit extends StatefulWidget {
 
@@ -100,7 +101,7 @@ class WareEditState extends State<WareEdit>{
             Container(
               height: 40,
               alignment: Alignment.center,
-              child: TextButton(onPressed: (){}, child: const Text("商品基础信息▼")),
+              child: TextButton(onPressed: (){}, child: Text("商品基础信息"+StringUtil.ARROW_DOWN))
             ),
             SizedBox(
               child: Row(
@@ -251,7 +252,7 @@ class WareEditState extends State<WareEdit>{
             Container(
               height: 40,
               alignment: Alignment.center,
-              child: TextButton( onPressed: (){}, child: Text("商品辅助信息1", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG))),
+              child: TextButton( onPressed: (){}, child: Text("商品辅助信息1"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG))),
             ),
             SizedBox(
               child: Row(
@@ -259,12 +260,12 @@ class WareEditState extends State<WareEdit>{
                   Expanded(child: Row(
                     children: [
                       Text("总排序(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
-                      SizedBox(width:40,child: TextButton(onPressed: (){
+                      SizedBox(width:50,child: TextButton(onPressed: (){
                         _showDialogLetter(context, true);
-                      }, child: Text(_maxLetterSort.isNotEmpty?_maxLetterSort:"选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
+                      }, child: Text(_maxLetterSort.isNotEmpty?_maxLetterSort+StringUtil.ARROW_DOWN:"选择"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
                       Expanded(child: TextField(
                         decoration: InputDecoration(
-                            hintText: "点击输入",
+                            hintText: "输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
                             border: const OutlineInputBorder(
                                 borderSide: BorderSide.none
@@ -276,12 +277,12 @@ class WareEditState extends State<WareEdit>{
                   Expanded(child: Row(
                     children: [
                       Text("总排序(小):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
-                      SizedBox(width:40,child: TextButton(onPressed: (){
+                      SizedBox(width:50,child: TextButton(onPressed: (){
                         _showDialogLetter(context, false);
-                        }, child: Text(_minLetterSort.isNotEmpty?_minLetterSort:"选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
+                        }, child: Text(_minLetterSort.isNotEmpty?_minLetterSort+StringUtil.ARROW_DOWN:"选择"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
                       Expanded(child: TextField(
                         decoration: InputDecoration(
-                            hintText: "点击输入",
+                            hintText: "输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
                             border: const OutlineInputBorder(
                                 borderSide: BorderSide.none
@@ -486,7 +487,7 @@ class WareEditState extends State<WareEdit>{
             Container(
               height: 40,
               alignment: Alignment.center,
-              child: TextButton(onPressed: (){}, child: Text("商品辅助信息2", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG))),
+              child: TextButton(onPressed: (){}, child: Text("商品辅助信息2"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG))),
             ),
             SizedBox(
               child: Row(
@@ -503,7 +504,9 @@ class WareEditState extends State<WareEdit>{
                             )
                         ),
                       )),
-                      TextButton(onPressed: (){}, child: Text("天", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE),),)
+                      TextButton(onPressed: (){
+                        _showDialogQuality(context);
+                      }, child: Text(_quality+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE),),)
                     ],
                   )),
                   Expanded(child: Row(
@@ -531,13 +534,13 @@ class WareEditState extends State<WareEdit>{
                   Expanded(child: Row(
                     children: [
                       Text("供应商:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
-                      TextButton(onPressed: (){}, child: Text("选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE)))
+                      TextButton(onPressed: (){}, child: Text("选择"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE)))
                     ],
                   )),
                   Expanded(child: Row(
                     children: [
                       Text("商品品牌:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
-                      TextButton(onPressed: (){}, child: Text("选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE)))
+                      TextButton(onPressed: (){}, child: Text("选择"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE)))
                     ],
                   )),
                 ],
@@ -566,7 +569,7 @@ class WareEditState extends State<WareEdit>{
             Container(
               height: 40,
               alignment: Alignment.center,
-              child: TextButton(onPressed: (){}, child: Text("查看客户类型价", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG))),
+              child: TextButton(onPressed: (){}, child: Text("查看客户类型价"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG))),
             ),
           ],
         ),
@@ -581,6 +584,7 @@ class WareEditState extends State<WareEdit>{
   String _wareTypeText = "未分类";
   String _maxLetterSort = "";
   String _minLetterSort = "";
+  String _quality = "天";
   TextEditingController _wareNameController = TextEditingController(text: "青岛打油");
   TextEditingController _maxUnitController = TextEditingController();
   TextEditingController _minUnitController = TextEditingController();
@@ -601,6 +605,9 @@ class WareEditState extends State<WareEdit>{
   TextEditingController _innerAccPriceDefaultController = TextEditingController();
   TextEditingController _lowestSalePriceController = TextEditingController();
   TextEditingController _wareFeaturesController = TextEditingController();
+  TextEditingController _qualityController = TextEditingController();
+  TextEditingController _qualityWarnController = TextEditingController();
+  TextEditingController _warnQtyController = TextEditingController();
 
   void _showDialogWareIsType(BuildContext context){
     showDialog(
@@ -696,8 +703,6 @@ class WareEditState extends State<WareEdit>{
     return list;
   }
 
-
-
   void _changeLetter(value, isMax){
     Navigator.pop(context);
     setState(() {
@@ -718,6 +723,42 @@ class WareEditState extends State<WareEdit>{
   void _changeRadioValue(value){
     setState(() {
       _businessType = value;
+    });
+  }
+
+  void _showDialogQuality(BuildContext context){
+    showDialog(
+        context: context,
+        builder: (_)=> SimpleDialog(
+          title: Text("保质期", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG)),
+          children: [
+            SimpleDialogOption(
+              child: const Text("年"),
+              onPressed: (){
+                _changeQuality("年");
+              },
+            ),
+            SimpleDialogOption(
+              child: const Text("月"),
+              onPressed: (){
+                _changeQuality("月");
+              },
+            ),
+            SimpleDialogOption(
+              child: const Text("天"),
+              onPressed: (){
+                _changeQuality("天");
+              },
+            ),
+          ],
+        )
+    );
+  }
+
+  void _changeQuality(text){
+    Navigator.pop(context);
+    setState(() {
+      _quality = text;
     });
   }
 
