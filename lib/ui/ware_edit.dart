@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterqwb/tree/dialog/tree_ware_type_dialog.dart';
 import 'package:flutterqwb/utils/color_util.dart';
-
-import '../utils/font_size_util.dart';
+import 'package:flutterqwb/utils/font_size_util.dart';
 
 class WareEdit extends StatefulWidget {
 
@@ -64,11 +64,10 @@ class WareEditState extends State<WareEdit>{
               child: Row(
                 children: [
                   Text("商品类别属性:", style: TextStyle(color: ColorUtil.GRAY_6)),
-//                  Radio(value: 0, groupValue: _radio, onChanged: (value)=> _changeRadioValue(value)),
-                  Radio(value: 0, groupValue: _radio, onChanged: null),
+                  Radio(value: "0", groupValue: _businessType, onChanged: (value)=> _changeRadioValue(value)),
+//                  Radio(value: "0", groupValue: _businessType, onChanged: null),
                   Text("实物商品", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
-                  Radio(value: 1, groupValue: _radio, onChanged: null),
-                  Radio(value: 1, groupValue: _radio, onChanged: (value)=>_changeRadioValue(value)),
+                  Radio(value: "1", groupValue: _businessType, onChanged: (value)=>_changeRadioValue(value)),
                   Text("服务商品", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                 ],
               ),
@@ -84,9 +83,11 @@ class WareEditState extends State<WareEdit>{
                   Text("商品类别:", style: TextStyle(color: ColorUtil.GRAY_6)),
                   Expanded(
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          _showDialogWareType(context);
+                        },
                         child:
-                        Text("未分类", style: TextStyle(color: ColorUtil.BLUE)),
+                        Text(_wareTypeText, style: TextStyle(color: ColorUtil.BLUE)),
                       )),
                   const Icon(Icons.arrow_drop_down)
                 ],
@@ -258,7 +259,9 @@ class WareEditState extends State<WareEdit>{
                   Expanded(child: Row(
                     children: [
                       Text("总排序(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
-                      SizedBox(width:40,child: TextButton(onPressed: (){}, child: Text("选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
+                      SizedBox(width:40,child: TextButton(onPressed: (){
+                        _showDialogLetter(context, true);
+                      }, child: Text(_maxLetterSort.isNotEmpty?_maxLetterSort:"选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
                       Expanded(child: TextField(
                         decoration: InputDecoration(
                             hintText: "点击输入",
@@ -273,7 +276,9 @@ class WareEditState extends State<WareEdit>{
                   Expanded(child: Row(
                     children: [
                       Text("总排序(小):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
-                      SizedBox(width:40,child: TextButton(onPressed: (){}, child: Text("选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
+                      SizedBox(width:40,child: TextButton(onPressed: (){
+                        _showDialogLetter(context, false);
+                        }, child: Text(_minLetterSort.isNotEmpty?_minLetterSort:"选择", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
                       Expanded(child: TextField(
                         decoration: InputDecoration(
                             hintText: "点击输入",
@@ -569,9 +574,13 @@ class WareEditState extends State<WareEdit>{
     );
   }
 
-  int _radio = 0;
-  int _isTypeValue = 1;
+  String _businessType = "0";
+  String _isType = "0";
   String _isTypeText = "库存商品类";
+  String _wareType = "";
+  String _wareTypeText = "未分类";
+  String _maxLetterSort = "";
+  String _minLetterSort = "";
   TextEditingController _wareNameController = TextEditingController(text: "青岛打油");
   TextEditingController _maxUnitController = TextEditingController();
   TextEditingController _minUnitController = TextEditingController();
@@ -580,41 +589,53 @@ class WareEditState extends State<WareEdit>{
   TextEditingController _maxBarCodeController = TextEditingController();
   TextEditingController _minBarCodeController = TextEditingController();
   TextEditingController _sUnitController = TextEditingController();
+  TextEditingController _maxSortController = TextEditingController();
+  TextEditingController _minSortController = TextEditingController();
+  TextEditingController _wareTypeSortController = TextEditingController();
+  TextEditingController _maxLsPriceController = TextEditingController();
+  TextEditingController _minLsPriceController = TextEditingController();
+  TextEditingController _maxInPriceController = TextEditingController();
+  TextEditingController _minInPriceController = TextEditingController();
+  TextEditingController _maxPfPriceController = TextEditingController();
+  TextEditingController _minPfPriceController = TextEditingController();
+  TextEditingController _innerAccPriceDefaultController = TextEditingController();
+  TextEditingController _lowestSalePriceController = TextEditingController();
+  TextEditingController _wareFeaturesController = TextEditingController();
 
   void _showDialogWareIsType(BuildContext context){
     showDialog(
       context: context,
       builder: (_)=> SimpleDialog(
-        title: const Text("选择"),
+        title: Text("选择商品总类", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG)),
         children: [
           SimpleDialogOption(
             child: const Text("库存商品类"),
             onPressed: (){
-              _changeWareIsType(1, "库存商品类");
+              _changeWareIsType("0", "库存商品类");
             },
           ),
           SimpleDialogOption(
             child: const Text("原辅材料类"),
             onPressed: (){
-              _changeWareIsType(2, "原辅材料类");
+              _changeWareIsType("1", "原辅材料类");
             },
           ),
           SimpleDialogOption(
             child: const Text("低值易耗品类"),
             onPressed: (){
-              _changeWareIsType(3, "低值易耗品类");
+              _changeWareIsType("2", "低值易耗品类");
             },
           ),
           SimpleDialogOption(
             child: const Text("固定资产类"),
             onPressed: (){
-              _changeWareIsType(4, "固定资产类");
+              _changeWareIsType("3", "固定资产类");
             },
           ),
           SimpleDialogOption(
             child: const Text("联盟商品类"),
             onPressed: (){
-              _changeWareIsType(5, "联盟商品类");
+              _changeWareIsType("4", "联盟商品类");
             },
           ),
         ],
@@ -623,16 +644,80 @@ class WareEditState extends State<WareEdit>{
   }
 
   void _changeWareIsType(value, text){
-    _isTypeValue = value;
     Navigator.pop(context);
     setState(() {
+      _isType = value;
       _isTypeText = text;
+      _wareType = "";
+      _wareTypeText = "";
+    });
+  }
+
+  List<Map<String, dynamic>> _checkList = [];
+  _showDialogWareType(BuildContext context) {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return TreeWareTypeDialog(isType:_isType, businessType: _businessType,checkData: _checkList, okCallBack: (value){
+            _checkList = value;
+            if(_checkList.isNotEmpty){
+              setState(() {
+                _wareType = _checkList[0]["waretypeId"].toString();
+                _wareTypeText = _checkList[0]["waretypeNm"];
+              });
+            }
+          });
+        }
+    );
+  }
+
+  void _showDialogLetter(BuildContext context, bool isMax){
+    showDialog(
+        context: context,
+        builder: (_)=> SimpleDialog(
+          title: Text("选择排序编码", style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.BIG)),
+          children: getLetterList(isMax),
+        )
+    );
+  }
+
+  List<Widget> getLetterList(bool isMax){
+    List<Widget> list = [];
+    List<String> letterList = ["A", "B","C", "D","E", "F","G", "H","L", "K","M", "N","O", "P","Q", "R","S", "T","U", "V","W", "X","Y", "Z",];
+    letterList.forEach((item) {
+      list.add(SimpleDialogOption(
+        child: Text(item),
+        onPressed: (){
+          _changeLetter(item, isMax);
+        },
+      ));
+    });
+    return list;
+  }
+
+
+
+  void _changeLetter(value, isMax){
+    Navigator.pop(context);
+    setState(() {
+      if(isMax){
+        _maxLetterSort = value;
+        if(_minLetterSort.isEmpty){
+          _minLetterSort = value;
+        }
+      }else{
+        _minLetterSort = value;
+        if(_maxLetterSort.isEmpty){
+          _maxLetterSort = value;
+        }
+      }
     });
   }
 
   void _changeRadioValue(value){
     setState(() {
-      _radio = value;
+      _businessType = value;
     });
   }
 

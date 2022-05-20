@@ -40,9 +40,15 @@ class TreeWareTypeState extends State<TreeWareTypeContent>{
   }
 
   loadData() async {
-    String token = "e72b5a8317ddd5c74b08c7846cfbb68c";
+    bool showKindType = true;
+    bool showServiceType = false;
+    if(widget.businessType=="1"){
+      showKindType = false;
+      showServiceType = true;
+    }
+    String token = "c71e7f9025a479a1a4bb5e4f5d256058";
     String url = "http://mp.qweib.com/web/basic/bas_ware_type/list_ware_type_group?token="+token.toString()+
-        "&showKindType=true&showOftenType=false&showFavType=false&showGroupType=false&showCarType=false&showServiceType=false&noCompany=0"
+        "&noCompany=0&showCarType=false&showOftenType=false&showFavType=false&showGroupType=false&showKindType="+showKindType.toString()+"&showServiceType="+showServiceType.toString()+
             "&businessType="+widget.businessType.toString()+"&isType="+widget.isType.toString();
     logger.d(url);
     var response = await Dio().get(url);
