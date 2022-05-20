@@ -35,7 +35,7 @@ class WareEditState extends State<WareEdit>{
             color: Colors.blue),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 10, right: 10),
+        margin: const EdgeInsets.only(left: 10, right: 10),
         color: Colors.white,
         child: ListView(
           children: [
@@ -56,10 +56,7 @@ class WareEditState extends State<WareEdit>{
                 ],
               ),
             ),
-            Divider(
-              height: 1,
-              color: ColorUtil.LINE_GRAY,
-            ),
+            Divider(height: 1, color: ColorUtil.LINE_GRAY),
             SizedBox(
               height: 40,
               child: Row(
@@ -73,10 +70,7 @@ class WareEditState extends State<WareEdit>{
                 ],
               ),
             ),
-            Divider(
-              height: 1,
-              color: ColorUtil.LINE_GRAY,
-            ),
+            Divider(height: 1,color: ColorUtil.LINE_GRAY),
             SizedBox(
               height: 40,
               child: Row(
@@ -264,6 +258,7 @@ class WareEditState extends State<WareEdit>{
                         _showDialogLetter(context, true);
                       }, child: Text(_maxLetterSort.isNotEmpty?_maxLetterSort+StringUtil.ARROW_DOWN:"选择"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
                       Expanded(child: TextField(
+                        controller: _maxSortController,
                         decoration: InputDecoration(
                             hintText: "输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -281,6 +276,7 @@ class WareEditState extends State<WareEdit>{
                         _showDialogLetter(context, false);
                         }, child: Text(_minLetterSort.isNotEmpty?_minLetterSort+StringUtil.ARROW_DOWN:"选择"+StringUtil.ARROW_DOWN, style: TextStyle(color: ColorUtil.BLUE, fontSize: FontSizeUtil.MIDDLE))),),
                       Expanded(child: TextField(
+                        controller: _minSortController,
                         decoration: InputDecoration(
                             hintText: "输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -301,6 +297,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("分类排序:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _wareTypeSortController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -322,6 +319,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("原价(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _maxLsPriceController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -336,6 +334,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("原价(小):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _minLsPriceController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -357,6 +356,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("采购价(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _maxInPriceController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -371,6 +371,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("采购价(小):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _minInPriceController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -392,6 +393,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("批发价(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _maxPfPriceController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -406,6 +408,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("批发价(小):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _minPfPriceController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -427,6 +430,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("内部核算价(默认):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _innerAccPriceDefaultController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -449,6 +453,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("最低销售价(大):", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _lowestSalePriceController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -470,6 +475,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("商品特征:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _wareFeaturesController,
                         decoration: InputDecoration(
                             hintText: "如：红色，白色，蓝色；(每组特征最多4个字)",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -496,6 +502,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("保质期:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _qualityController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -513,6 +520,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("保质期预警:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _qualityWarnController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
@@ -554,6 +562,7 @@ class WareEditState extends State<WareEdit>{
                     children: [
                       Text("预警最低数量:", style: TextStyle(color: ColorUtil.GRAY_6, fontSize: FontSizeUtil.MIDDLE)),
                       Expanded(child: TextField(
+                        controller: _warnQtyController,
                         decoration: InputDecoration(
                             hintText: "点击输入",
                             hintStyle: TextStyle(color: ColorUtil.GRAY_9, fontSize: FontSizeUtil.MIDDLE),
