@@ -46,7 +46,7 @@ class TreeWareTypeState extends State<TreeWareTypeContent>{
       showKindType = false;
       showServiceType = true;
     }
-    String token = "c71e7f9025a479a1a4bb5e4f5d256058";
+    String token = "c302a7ff87e635639f1e8f48ec052628";
     String url = "http://mp.qweib.com/web/basic/bas_ware_type/list_ware_type_group?token="+token.toString()+
         "&noCompany=0&showCarType=false&showOftenType=false&showFavType=false&showGroupType=false&showKindType="+showKindType.toString()+"&showServiceType="+showServiceType.toString()+
             "&businessType="+widget.businessType.toString()+"&isType="+widget.isType.toString();
