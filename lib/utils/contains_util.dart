@@ -1,7 +1,3 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
-
 class ContainsUtil{
-  static String token = "e92805bfcf7ea9b54e5b1fc6d6bb7529";
+  static String token = "ae3cfcfcf08d721c6b699dcfd3a9e3ad";
 }

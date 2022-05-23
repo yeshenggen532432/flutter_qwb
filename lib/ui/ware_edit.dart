@@ -843,6 +843,7 @@ class WareEditState extends State<WareEdit> {
   String _maxLetterSort = "";
   String _minLetterSort = "";
   String _quality = "天";
+  int _qualityValue = 1;
   final TextEditingController _wareNameController = TextEditingController();
   final TextEditingController _maxUnitController = TextEditingController();
   final TextEditingController _minUnitController = TextEditingController();
@@ -1025,29 +1026,30 @@ class WareEditState extends State<WareEdit> {
                 SimpleDialogOption(
                   child: const Text("年"),
                   onPressed: () {
-                    _changeQuality("年");
+                    _changeQuality("年", 3);
                   },
                 ),
                 SimpleDialogOption(
                   child: const Text("月"),
                   onPressed: () {
-                    _changeQuality("月");
+                    _changeQuality("月", 2);
                   },
                 ),
                 SimpleDialogOption(
                   child: const Text("天"),
                   onPressed: () {
-                    _changeQuality("天");
+                    _changeQuality("天", 1);
                   },
                 ),
               ],
             ));
   }
 
-  void _changeQuality(text) {
+  void _changeQuality(text, value) {
     Navigator.pop(context);
     setState(() {
       _quality = text;
+      _qualityValue = value;
     });
   }
 
@@ -1127,92 +1129,54 @@ class WareEditState extends State<WareEdit> {
     String innerAccPriceDefault = _innerAccPriceDefaultController.text;
     String lowestSalePrice = _lowestSalePriceController.text;
     String wareFeatures = _wareFeaturesController.text;
+    String quality = _qualityController.text;
     String qualityWarn = _qualityWarnController.text;
     String warnQty = _warnQtyController.text;
 
-//    var formData = FormData.fromMap({
-//      "bUnit": "1",
-//      "sUnit": sUnit,
-//      "barCodeTip": true,
-//      "beBarCode": maxBarCode,
-//      "businessType": _businessType,
-////      "hsNum": "1.0",
-//      "inPrice": maxInPrice,
-//      "minInPrice": minInPrice,
-//      "innerAccPriceDefault": innerAccPriceDefault,
-//      "lowestSalePrice": lowestSalePrice,
-//      "lsPrice": maxLsPrice,
-//      "minLsPrice": minLsPrice,
-//      "minSort": minSort,
-////      "minSortCode": minSortCode,
-//      "qualityAlert": _quality,
-//      "qualityDays": "",
-//      "minUnit": minUnit,
-//      "minWareGg": minWareGg,
-//      "packBarCode": maxBarCode,
-//      "sort": minSort,
-////      "sortCode": _sortL,
-////      "sunitPrice": minPrin,
-//      "wareDj": maxPfPrice,
-//      "wareDw": maxUnit,
-//      "wareFeatures": wareFeatures,
-//      "wareGg": maxWareGg,
-////      "wareId": "",
-//      "wareNm": wareName,
-//      "warePicList": [],
-//      "waretype": _wareType,
-//      "waretypeSort": wareTypeSort,
-//      "warnQty": warnQty,
-//    });
-
-    Map<String, dynamic>? params = {};
-    params["wareNm"] = wareName;
-    params["businessType"] = _businessType;
-    params["waretype"] = _wareType;
-    params["wareDw"] = maxUnit;
-    params["minUnit"] = minUnit;
-    params["wareGg"] = maxWareGg;
-    params["minWareGg"] = minWareGg;
-    params["bUnit"] = 1;
-    params["sUnit"] = sUnit;
-    var formData = FormData.fromMap(params);
-
     var data = {
-      "bUnit": "1",
-      "sUnit": sUnit,
-      "beBarCode": maxBarCode,
+//      "wareId": "null",
+      "barCodeTip": true,
       "businessType": _businessType,
-      "inPrice": maxInPrice,
-      "minInPrice": minInPrice,
-      "innerAccPriceDefault": innerAccPriceDefault,
-      "lowestSalePrice": lowestSalePrice,
-      "lsPrice": maxLsPrice,
-      "minLsPrice": minLsPrice,
-      "minSort": minSort,
-//      "qualityAlert": _quality,
-//      "qualityDays": "",
+      "waretype": _wareType,
+      "wareNm": wareName,
+      "wareDw": maxUnit,
       "minUnit": minUnit,
+      "wareGg": maxWareGg,
       "minWareGg": minWareGg,
       "packBarCode": maxBarCode,
-      "sort": minSort,
-      "wareDj": maxPfPrice,
-      "wareDw": maxUnit,
-      "wareFeatures": wareFeatures,
-      "wareGg": maxWareGg,
-      "wareNm": wareName,
-      "warePicList": [],
-      "waretype": _wareType,
+      "beBarCode": minBarCode,
+      "bUnit": "1",
+      "sUnit": sUnit,
+      "sortCode": _maxLetterSort,
+      "sort": maxSort,
+      "minSortCode": _minLetterSort,
+      "minSort": minSort,
       "waretypeSort": wareTypeSort,
+      "lsPrice": maxLsPrice,
+      "minLsPrice": minLsPrice,
+      "inPrice": maxInPrice,
+      "minInPrice": minInPrice,
+      "wareDj": maxPfPrice,
+      "sunitPrice": minPfPrice,
+      "innerAccPriceDefault": innerAccPriceDefault,
+      "lowestSalePrice": lowestSalePrice,
+      "wareFeatures": wareFeatures,
+      "qualityDays": quality,
+      "qualityUnit": _qualityValue,
+      "qualityAlert": qualityWarn,
       "warnQty": warnQty,
+      "warePicList": [],
+//  "brandId":,
+//    "supId": 1032,
+//    "supName": "上海梅林泰康食品有限公司制造",
+//    "supType": 0,
     };
 
     var response = await Dio().post(UrlUtil.WARE_SAVE,
         data: data,
-//    queryParameters: params ,
         options:
             Options(
                 headers: {"token": ContainsUtil.token},
-                contentType: "application/json;charset=UTF-8"
                 )
         );
     logger.d(response);
