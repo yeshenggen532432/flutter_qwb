@@ -1177,9 +1177,38 @@ class WareEditState extends State<WareEdit> {
     params["sUnit"] = sUnit;
     var formData = FormData.fromMap(params);
 
+    var data = {
+      "bUnit": "1",
+      "sUnit": sUnit,
+      "beBarCode": maxBarCode,
+      "businessType": _businessType,
+      "inPrice": maxInPrice,
+      "minInPrice": minInPrice,
+      "innerAccPriceDefault": innerAccPriceDefault,
+      "lowestSalePrice": lowestSalePrice,
+      "lsPrice": maxLsPrice,
+      "minLsPrice": minLsPrice,
+      "minSort": minSort,
+//      "qualityAlert": _quality,
+//      "qualityDays": "",
+      "minUnit": minUnit,
+      "minWareGg": minWareGg,
+      "packBarCode": maxBarCode,
+      "sort": minSort,
+      "wareDj": maxPfPrice,
+      "wareDw": maxUnit,
+      "wareFeatures": wareFeatures,
+      "wareGg": maxWareGg,
+      "wareNm": wareName,
+      "warePicList": [],
+      "waretype": _wareType,
+      "waretypeSort": wareTypeSort,
+      "warnQty": warnQty,
+    };
+
     var response = await Dio().post(UrlUtil.WARE_SAVE,
-//        data: formData,
-    queryParameters: params ,
+        data: data,
+//    queryParameters: params ,
         options:
             Options(
                 headers: {"token": ContainsUtil.token},
