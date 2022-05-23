@@ -1,12 +1,18 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutterqwb/model/pic_bean.dart';
+import 'package:flutterqwb/model/pic_result.dart';
 import 'package:flutterqwb/tree/dialog/tree_ware_type_dialog.dart';
 import 'package:flutterqwb/tree/tree.dart';
 import 'package:flutterqwb/utils/color_util.dart';
+import 'package:flutterqwb/utils/contains_util.dart';
 import 'package:flutterqwb/utils/font_size_util.dart';
 import 'package:flutterqwb/utils/string_util.dart';
+import 'package:flutterqwb/utils/url_util.dart';
 import 'package:image_picker/image_picker.dart';
 
 class WareEdit extends StatefulWidget {
@@ -1050,15 +1056,13 @@ class WareEditState extends State<WareEdit> {
   void _imagePickerByCamera() async {
     ImagePicker _picker = ImagePicker();
     final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
-    setState(() {
-      _picList.add(photo!.path);
-    });
+    uploadPic(photo!.path);
   }
 
-  List<String> _picList = [];
+  List<PicBean> _picList = [];
   Widget _picItem(int position){
-    String pic = _picList[position];
-    File file = File(pic);
+    PicBean pic = _picList[position];
+//    File file = File(pic);
     return Stack(
       children:[
         Positioned(
@@ -1069,7 +1073,7 @@ class WareEditState extends State<WareEdit> {
               width: 100,
               height: 100,
               child: Container(
-                child: Image.file(file, fit:BoxFit.fill),
+                child: Image.network(UrlUtil.ROOT_UPLOAD + pic.objectId, fit:BoxFit.fill),
               ),
             )),
         Positioned(
@@ -1086,6 +1090,22 @@ class WareEditState extends State<WareEdit> {
         )
       ]
     );
+  }
+
+  Future<void> uploadPic(String filePath) async {
+    EasyLoading.show(status: '加载中...');
+    var dio = Dio();
+    Map<String, dynamic> map = {};
+    map["path"] = "ware";
+    map["file"] = await MultipartFile.fromFile(filePath);
+    var data = FormData.fromMap(map);
+    var response = await dio.post(UrlUtil.UPLOAD_FILE_SINGLE, data: data, options: Options(headers: {"token": ContainsUtil.token}));
+    logger.d(response);
+    PicResult picResult = PicResult.fromJson(json.decode(response.toString()));
+    setState(() {
+      EasyLoading.dismiss();
+      _picList.add(picResult.data);
+    });
   }
 
   Future<void> _save() async {
