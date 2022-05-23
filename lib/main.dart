@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "ware_edit",
       routes: {
-        "ware_edit": (context)=> const WareEdit(),
+        "ware_edit": (context)=> WareEdit(type: true),
       },
       builder: EasyLoading.init(),
 //      home: const WareEdit(),

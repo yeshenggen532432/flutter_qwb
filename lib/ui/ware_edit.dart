@@ -16,7 +16,9 @@ import 'package:flutterqwb/utils/url_util.dart';
 import 'package:image_picker/image_picker.dart';
 
 class WareEdit extends StatefulWidget {
-  const WareEdit({Key? key}) : super(key: key);
+  bool type;
+  int? wareId;
+  WareEdit({Key? key, required this.type, this.wareId}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -25,6 +27,13 @@ class WareEdit extends StatefulWidget {
 }
 
 class WareEditState extends State<WareEdit> {
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1201,7 +1210,6 @@ class WareEditState extends State<WareEdit> {
                 )
         );
     logger.d(response);
-    
   }
 
 
