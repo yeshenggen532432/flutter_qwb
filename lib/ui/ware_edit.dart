@@ -843,31 +843,29 @@ class WareEditState extends State<WareEdit> {
   String _maxLetterSort = "";
   String _minLetterSort = "";
   String _quality = "天";
-  TextEditingController _wareNameController =
-      TextEditingController(text: "青岛打油");
-  TextEditingController _maxUnitController = TextEditingController();
-  TextEditingController _minUnitController = TextEditingController();
-  TextEditingController _maxWareGgUnitController = TextEditingController();
-  TextEditingController _minWareGgUnitController = TextEditingController();
-  TextEditingController _maxBarCodeController = TextEditingController();
-  TextEditingController _minBarCodeController = TextEditingController();
-  TextEditingController _sUnitController = TextEditingController();
-  TextEditingController _maxSortController = TextEditingController();
-  TextEditingController _minSortController = TextEditingController();
-  TextEditingController _wareTypeSortController = TextEditingController();
-  TextEditingController _maxLsPriceController = TextEditingController();
-  TextEditingController _minLsPriceController = TextEditingController();
-  TextEditingController _maxInPriceController = TextEditingController();
-  TextEditingController _minInPriceController = TextEditingController();
-  TextEditingController _maxPfPriceController = TextEditingController();
-  TextEditingController _minPfPriceController = TextEditingController();
-  TextEditingController _innerAccPriceDefaultController =
-      TextEditingController();
-  TextEditingController _lowestSalePriceController = TextEditingController();
-  TextEditingController _wareFeaturesController = TextEditingController();
-  TextEditingController _qualityController = TextEditingController();
-  TextEditingController _qualityWarnController = TextEditingController();
-  TextEditingController _warnQtyController = TextEditingController();
+  final TextEditingController _wareNameController = TextEditingController();
+  final TextEditingController _maxUnitController = TextEditingController();
+  final TextEditingController _minUnitController = TextEditingController();
+  final TextEditingController _maxWareGgUnitController = TextEditingController();
+  final TextEditingController _minWareGgUnitController = TextEditingController();
+  final TextEditingController _maxBarCodeController = TextEditingController();
+  final TextEditingController _minBarCodeController = TextEditingController();
+  final TextEditingController _sUnitController = TextEditingController();
+  final TextEditingController _maxSortController = TextEditingController();
+  final TextEditingController _minSortController = TextEditingController();
+  final TextEditingController _wareTypeSortController = TextEditingController();
+  final TextEditingController _maxLsPriceController = TextEditingController();
+  final TextEditingController _minLsPriceController = TextEditingController();
+  final TextEditingController _maxInPriceController = TextEditingController();
+  final TextEditingController _minInPriceController = TextEditingController();
+  final TextEditingController _maxPfPriceController = TextEditingController();
+  final TextEditingController _minPfPriceController = TextEditingController();
+  final TextEditingController _innerAccPriceDefaultController = TextEditingController();
+  final TextEditingController _lowestSalePriceController = TextEditingController();
+  final TextEditingController _wareFeaturesController = TextEditingController();
+  final TextEditingController _qualityController = TextEditingController();
+  final TextEditingController _qualityWarnController = TextEditingController();
+  final TextEditingController _warnQtyController = TextEditingController();
 
   void _showDialogWareIsType(BuildContext context) {
     showDialog(
@@ -1132,7 +1130,6 @@ class WareEditState extends State<WareEdit> {
     String qualityWarn = _qualityWarnController.text;
     String warnQty = _warnQtyController.text;
 
-    String url = "http://mp.qweib.com/web/basic/bas_ware/save_update";
 //    var formData = FormData.fromMap({
 //      "bUnit": "1",
 //      "sUnit": sUnit,
@@ -1178,18 +1175,19 @@ class WareEditState extends State<WareEdit> {
     params["minWareGg"] = minWareGg;
     params["bUnit"] = 1;
     params["sUnit"] = sUnit;
-
     var formData = FormData.fromMap(params);
 
-    var response = await Dio().post(url,
-        data: formData,
+    var response = await Dio().post(UrlUtil.WARE_SAVE,
+//        data: formData,
+    queryParameters: params ,
         options:
             Options(
-                headers: {"token": "c302a7ff87e635639f1e8f48ec052628"},
-              contentType: "application/json",
+                headers: {"token": ContainsUtil.token},
+                contentType: "application/json;charset=UTF-8"
                 )
         );
     logger.d(response);
+    
   }
 
 

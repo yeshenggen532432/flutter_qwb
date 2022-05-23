@@ -3,6 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterqwb/tree/tree.dart';
 import 'package:flutterqwb/utils/color_util.dart';
+import 'package:flutterqwb/utils/url_util.dart';
+
+import '../../utils/contains_util.dart';
 
 class TreeWareTypeDialog extends Dialog {
   String isType;
@@ -46,12 +49,28 @@ class TreeWareTypeState extends State<TreeWareTypeContent>{
       showKindType = false;
       showServiceType = true;
     }
-    String token = "329abd93c3e0f60848afb4cc724b2e56";
-    String url = "http://mp.qweib.com/web/basic/bas_ware_type/list_ware_type_group?token="+token.toString()+
-        "&noCompany=0&showCarType=false&showOftenType=false&showFavType=false&showGroupType=false&showKindType="+showKindType.toString()+"&showServiceType="+showServiceType.toString()+
-            "&businessType="+widget.businessType.toString()+"&isType="+widget.isType.toString();
-    logger.d(url);
-    var response = await Dio().get(url);
+//    String token = "329abd93c3e0f60848afb4cc724b2e56";
+//    String url = "http://mp.qweib.com/web/basic/bas_ware_type/list_ware_type_group?token="+token.toString()+
+//        "&noCompany=0&showCarType=false&showOftenType=false&showFavType=false&showGroupType=false&showKindType="+showKindType.toString()+"&showServiceType="+showServiceType.toString()+
+//            "&businessType="+widget.businessType.toString()+"&isType="+widget.isType.toString();
+
+    Map<String, dynamic>? params = {};
+    params["noCompany"] = 0;
+    params["showCarType"] = false;
+    params["showOftenType"] = false;
+    params["showFavType"] = false;
+    params["showGroupType"] = false;
+    params["showKindType"] = showKindType;
+    params["showServiceType"] = showServiceType;
+    params["businessType"] = widget.businessType;
+    params["isType"] = widget.isType;
+
+    var response = await Dio().get(
+        UrlUtil.WARE_TYPE_TREE,
+        queryParameters: params,
+        options:
+          Options(headers: {"token": ContainsUtil.token})
+        );
 
     setState(() {
       data.clear();
