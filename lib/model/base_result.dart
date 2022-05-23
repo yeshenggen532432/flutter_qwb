@@ -1,32 +1,27 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
-
-class BaseResult{
+class BaseResult {
   int? code;
   String? message;
-  bool? state;
-  bool? success;
   String? msg;
+  bool? success;
+  bool? state;
 
-  BaseResult(
-      {this.code, this.message, this.state, this.success, this.msg});
+  BaseResult({this.code, this.message, this.msg, this.success, this.state});
 
   BaseResult.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
-    state = json['state'];
-    success = json['success'];
     msg = json['msg'];
+    success = json['success'];
+    state = json['state'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['code'] = this.code;
     data['message'] = this.message;
-    data['state'] = this.state;
-    data['success'] = this.success;
     data['msg'] = this.msg;
+    data['success'] = this.success;
+    data['state'] = this.state;
     return data;
   }
 }

@@ -1,9 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutterqwb/model/base_result.dart';
 import 'package:flutterqwb/model/pic_bean.dart';
 import 'package:flutterqwb/model/pic_result.dart';
 import 'package:flutterqwb/tree/dialog/tree_ware_type_dialog.dart';
@@ -12,6 +11,7 @@ import 'package:flutterqwb/utils/color_util.dart';
 import 'package:flutterqwb/utils/contains_util.dart';
 import 'package:flutterqwb/utils/font_size_util.dart';
 import 'package:flutterqwb/utils/string_util.dart';
+import 'package:flutterqwb/utils/toast_util.dart';
 import 'package:flutterqwb/utils/url_util.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -1065,27 +1065,32 @@ class WareEditState extends State<WareEdit> {
 //    File file = File(pic);
     return Stack(
       children:[
+        Positioned.fill(child: GestureDetector(
+          onTap: (){
+
+          },
+          child: RepaintBoundary(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.network(UrlUtil.ROOT_UPLOAD + pic.objectId, fit:BoxFit.cover),
+            ),
+          ),
+        )),
         Positioned(
+          right: 0,
+          child: GestureDetector(
+            onTap: (){
+              delPic(pic.objectId, position);
+            },
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8)
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20)
               ),
-              width: 100,
-              height: 100,
-              child: Container(
-                child: Image.network(UrlUtil.ROOT_UPLOAD + pic.objectId, fit:BoxFit.fill),
-              ),
-            )),
-        Positioned(
-          right: 1,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-                borderRadius: BorderRadius.circular(20)
+              width: 20,
+              height: 20,
+              child: Icon(Icons.close, color: ColorUtil.GRAY_9, size: 18,),
             ),
-            width: 20,
-            height: 20,
-            child: Icon(Icons.close, color: ColorUtil.GRAY_9, size: 20,),
           ),
         )
       ]
@@ -1099,12 +1104,28 @@ class WareEditState extends State<WareEdit> {
     map["path"] = "ware";
     map["file"] = await MultipartFile.fromFile(filePath);
     var data = FormData.fromMap(map);
-    var response = await dio.post(UrlUtil.UPLOAD_FILE_SINGLE, data: data, options: Options(headers: {"token": ContainsUtil.token}));
+    var response = await dio.post(UrlUtil.upload_pic_single, data: data, options: Options(headers: {"token": ContainsUtil.token}));
     logger.d(response);
     PicResult picResult = PicResult.fromJson(json.decode(response.toString()));
     setState(() {
       EasyLoading.dismiss();
       _picList.add(picResult.data);
+    });
+  }
+
+  Future<void> delPic(String filePath, int index) async {
+    EasyLoading.show(status: '加载中...');
+    var dio = Dio();
+    Map<String, dynamic> map = {};
+    map["object"] = filePath;
+    var data = FormData.fromMap(map);
+    var response = await dio.post(UrlUtil.del_pic_single, data: data, options: Options(headers: {"token": ContainsUtil.token}));
+    logger.d(response);
+    BaseResult result = BaseResult.fromJson(json.decode(response.toString()));
+    setState(() {
+      EasyLoading.dismiss();
+      ToastUtil.success("删除成功");
+      _picList.removeAt(index);
     });
   }
 
