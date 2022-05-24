@@ -5,6 +5,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutterqwb/model/base_result.dart';
 import 'package:flutterqwb/model/pic_bean.dart';
 import 'package:flutterqwb/model/pic_result.dart';
+import 'package:flutterqwb/model/ware/ware_pic.dart';
+import 'package:flutterqwb/model/ware/ware_result.dart';
 import 'package:flutterqwb/tree/dialog/tree_ware_type_dialog.dart';
 import 'package:flutterqwb/tree/tree.dart';
 import 'package:flutterqwb/utils/color_util.dart';
@@ -31,7 +33,46 @@ class WareEditState extends State<WareEdit> {
   @override
   void initState() {
     super.initState();
+    queryDetail();
+  }
 
+  Future<void> queryDetail() async {
+    if(widget.type){
+      EasyLoading.show(status: "加载中...");
+      Map<String, dynamic>? params = {"wareId":widget.wareId};
+      var response = await Dio().get(
+          UrlUtil.ware_detail,
+          queryParameters: params,
+          options: Options(headers: {"token": ContainsUtil.token})
+      );
+      EasyLoading.dismiss();
+      logger.d(response);
+      WareResult result = WareResult.fromJson(json.decode(response.toString()));
+      if(result.state != null && result.state == true){
+        doUI(result.sysWare!);
+      }
+    }
+  }
+
+  void doUI(SysWare ware){
+    setState(() {
+      _isType = ware.isType!.toString();
+//      _isTypeText = TODO
+      _businessType = ware.businessType!.toString();
+      //实物商品，服务商品，不可修改
+      if(ware.waretype != null){
+        _wareType = ware.waretype!.toString();
+        _wareTypeText = ware.waretypeNm!;
+      }
+      _wareNameController.text = ware.wareNm!;
+      _maxUnitController.text = ware.wareDw!;
+      _minUnitController.text = ware.minUnit!;
+      _maxWareGgUnitController.text = ware.wareGg!;
+      _minWareGgUnitController.text = ware.minWareGg!;
+      _maxBarCodeController.text = ware.packBarCode!;
+      _sUnitController.text = ware.sUnit!.toString();
+
+    });
   }
 
   @override
@@ -1068,9 +1109,9 @@ class WareEditState extends State<WareEdit> {
     uploadPic(photo!.path);
   }
 
-  List<PicBean> _picList = [];
+  List<WarePic> _picList = [];
   Widget _picItem(int position){
-    PicBean pic = _picList[position];
+    WarePic pic = _picList[position];
 //    File file = File(pic);
     return Stack(
       children:[
@@ -1081,7 +1122,7 @@ class WareEditState extends State<WareEdit> {
           child: RepaintBoundary(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(UrlUtil.ROOT_UPLOAD + pic.objectId, fit:BoxFit.cover),
+              child: Image.network(UrlUtil.ROOT_UPLOAD + pic.picMini!, fit:BoxFit.cover),
             ),
           ),
         )),
@@ -1089,7 +1130,7 @@ class WareEditState extends State<WareEdit> {
           right: 0,
           child: GestureDetector(
             onTap: (){
-              delPic(pic.objectId, position);
+              delPic(pic.pic!, position);
             },
             child: Container(
               decoration: BoxDecoration(
@@ -1118,7 +1159,8 @@ class WareEditState extends State<WareEdit> {
     PicResult picResult = PicResult.fromJson(json.decode(response.toString()));
     setState(() {
       EasyLoading.dismiss();
-      _picList.add(picResult.data);
+      PicBean picBean = picResult.data;
+      _picList.add(WarePic.fromUploadPic(picBean));
     });
   }
 
@@ -1195,7 +1237,7 @@ class WareEditState extends State<WareEdit> {
       "qualityUnit": _qualityValue,
       "qualityAlert": qualityWarn,
       "warnQty": warnQty,
-      "warePicList": [],
+      "warePicList": _picList,
 //  "brandId":,
 //    "supId": 1032,
 //    "supName": "上海梅林泰康食品有限公司制造",
