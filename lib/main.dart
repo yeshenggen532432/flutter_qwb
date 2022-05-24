@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '企微宝',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -42,18 +42,5 @@ class MyApp extends StatelessWidget {
 //      home: const WareEdit(),
     );
   }
-
-//  List<Map<String, dynamic>> _checkList = [];
-//  _showDialogWareType(BuildContext context) {
-//    showDialog(
-//        context: context,
-//        barrierDismissible: false,
-//        builder: (BuildContext context) {
-//          return TreeWareTypeDialog(isType:"0", businessType:"0",checkData: _checkList, okCallBack: (value){
-//            _checkList = value;
-//          });
-//        }
-//    );
-//  }
 
 }

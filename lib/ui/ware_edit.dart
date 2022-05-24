@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutterqwb/model/base_result.dart';
 import 'package:flutterqwb/model/pic_bean.dart';
 import 'package:flutterqwb/model/pic_result.dart';
+import 'package:flutterqwb/model/ware/ware.dart';
 import 'package:flutterqwb/model/ware/ware_pic.dart';
 import 'package:flutterqwb/model/ware/ware_result.dart';
 import 'package:flutterqwb/tree/dialog/tree_ware_type_dialog.dart';
@@ -12,9 +13,11 @@ import 'package:flutterqwb/tree/tree.dart';
 import 'package:flutterqwb/utils/color_util.dart';
 import 'package:flutterqwb/utils/contains_util.dart';
 import 'package:flutterqwb/utils/font_size_util.dart';
+import 'package:flutterqwb/utils/quality_unit_util.dart';
 import 'package:flutterqwb/utils/string_util.dart';
 import 'package:flutterqwb/utils/toast_util.dart';
 import 'package:flutterqwb/utils/url_util.dart';
+import 'package:flutterqwb/utils/ware_is_type_util.dart';
 import 'package:image_picker/image_picker.dart';
 
 class WareEdit extends StatefulWidget {
@@ -54,23 +57,42 @@ class WareEditState extends State<WareEdit> {
     }
   }
 
-  void doUI(SysWare ware){
+  void doUI(Ware ware){
     setState(() {
+      _wareId = ware.wareId;
       _isType = ware.isType!.toString();
-//      _isTypeText = TODO
-      _businessType = ware.businessType!.toString();
-      //实物商品，服务商品，不可修改
-      if(ware.waretype != null){
-        _wareType = ware.waretype!.toString();
-        _wareTypeText = ware.waretypeNm!;
-      }
+      _isTypeText = WareIsTypeUtil.getText(_isType);
+      _businessType = ware.businessType != null? ware.businessType.toString(): "0";
+      _wareType = ware.waretype != null? ware.waretype.toString(): "0";
+      _wareTypeText = ware.waretypeNm!;
       _wareNameController.text = ware.wareNm!;
       _maxUnitController.text = ware.wareDw!;
       _minUnitController.text = ware.minUnit!;
       _maxWareGgUnitController.text = ware.wareGg!;
       _minWareGgUnitController.text = ware.minWareGg!;
       _maxBarCodeController.text = ware.packBarCode!;
-      _sUnitController.text = ware.sUnit!.toString();
+      _sUnitController.text = ware.sUnit != null? ware.sUnit.toString(): "";
+      _maxLetterSort = ware.sortCode!;
+      _maxSortController.text = ware.sort != null? ware.sort.toString(): "";
+      _minLetterSort = ware.minSortCode!;
+      _minSortController.text = ware.minSort != null? ware.minSort.toString(): "";
+      _wareTypeSortController.text = ware.waretypeSort != null? ware.waretypeSort.toString(): "";
+      _maxLsPriceController.text = ware.lsPrice != null? ware.lsPrice.toString(): "";
+      _minLsPriceController.text = ware.minLsPrice != null? ware.minLsPrice.toString(): "";
+      _maxInPriceController.text = ware.inPrice != null? ware.inPrice.toString(): "";
+      _minInPriceController.text = ware.minInPrice != null? ware.minInPrice.toString(): "";
+      _maxPfPriceController.text = ware.wareDj != null? ware.wareDj.toString(): "";
+      _minPfPriceController.text = ware.sunitPrice != null? ware.sunitPrice.toString(): "";
+      _innerAccPriceDefaultController.text = ware.innerAccPriceDefault != null? ware.innerAccPriceDefault.toString(): "";
+      _lowestSalePriceController.text = ware.lowestSalePrice != null? ware.lowestSalePrice.toString(): "";
+      _wareFeaturesController.text = ware.wareFeatures != null? ware.wareFeatures.toString(): "";
+      _qualityController.text = ware.qualityDays != null? ware.qualityDays.toString(): "";
+      _qualityWarnController.text = ware.qualityAlert != null? ware.qualityAlert.toString(): "";
+      _qualityValue =  ware.qualityUnit != null? ware.qualityUnit!: 1;
+      _quality = QualityUnitUtil.getText(_qualityValue);
+      _warnQtyController.text = ware.warnQty != null? ware.warnQty.toString(): "";
+      _picList.addAll(ware.warePicList!);
+
 
     });
   }
@@ -152,8 +174,7 @@ class WareEditState extends State<WareEdit> {
                   Radio(
                       value: "0",
                       groupValue: _businessType,
-                      onChanged: (value) => _changeRadioValue(value)),
-//                  Radio(value: "0", groupValue: _businessType, onChanged: null),
+                      onChanged: (value) => widget.type? null: _changeRadioValue(value)),
                   Text("实物商品",
                       style: TextStyle(
                           color: ColorUtil.GRAY_6,
@@ -161,7 +182,7 @@ class WareEditState extends State<WareEdit> {
                   Radio(
                       value: "1",
                       groupValue: _businessType,
-                      onChanged: (value) => _changeRadioValue(value)),
+                      onChanged: (value) => widget.type? null: _changeRadioValue(value)),
                   Text("服务商品",
                       style: TextStyle(
                           color: ColorUtil.GRAY_6,
@@ -894,6 +915,7 @@ class WareEditState extends State<WareEdit> {
   String _minLetterSort = "";
   String _quality = "天";
   int _qualityValue = 1;
+  int? _wareId;
   final TextEditingController _wareNameController = TextEditingController();
   final TextEditingController _maxUnitController = TextEditingController();
   final TextEditingController _minUnitController = TextEditingController();
@@ -1117,7 +1139,6 @@ class WareEditState extends State<WareEdit> {
       children:[
         Positioned.fill(child: GestureDetector(
           onTap: (){
-
           },
           child: RepaintBoundary(
             child: ClipRRect(
@@ -1174,9 +1195,11 @@ class WareEditState extends State<WareEdit> {
     logger.d(response);
     BaseResult result = BaseResult.fromJson(json.decode(response.toString()));
     setState(() {
-      EasyLoading.dismiss();
-      ToastUtil.success("删除成功");
-      _picList.removeAt(index);
+      if(result.state != null && result.state == true){
+        EasyLoading.dismiss();
+        ToastUtil.success("删除成功");
+        _picList.removeAt(index);
+      }
     });
   }
 
@@ -1206,7 +1229,7 @@ class WareEditState extends State<WareEdit> {
     String warnQty = _warnQtyController.text;
 
     var data = {
-//      "wareId": "null",
+      "wareId": _wareId,
       "barCodeTip": true,
       "businessType": _businessType,
       "waretype": _wareType,
@@ -1244,12 +1267,10 @@ class WareEditState extends State<WareEdit> {
 //    "supType": 0,
     };
 
-    var response = await Dio().post(UrlUtil.WARE_SAVE,
+    var response = await Dio().post(
+        UrlUtil.WARE_SAVE,
         data: data,
-        options:
-            Options(
-                headers: {"token": ContainsUtil.token},
-                )
+        options: Options( headers: {"token": ContainsUtil.token} )
         );
     logger.d(response);
   }
